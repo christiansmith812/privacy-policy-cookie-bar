@@ -9,11 +9,13 @@
 	border-top: 1px solid #ddd;
 	display: none;
 }
+
 .cookie-inner{
 	display: block;
 	max-width: 1300px;
 	margin:0px auto;
 }
+
 .cookie-inner p {
 	float: left;
 	margin:3px 0;
@@ -27,8 +29,8 @@
 	border:1px solid #ccc;
 	outline: none;
 }
+
 .cookie-inner button:hover{
 	background: #ccc;
 	cursor: pointer;
 }
-
