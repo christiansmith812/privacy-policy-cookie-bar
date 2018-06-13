@@ -1,32 +1,33 @@
-var cookie = {
+let cookie = {
     
 	day: 30,
 	
-    init: function(day = null) {
+	init: function(day = null) {
 		if (day !== null && Number.isInteger(day)) { this.day = day; }
-        if (!this.get('privacyAccept')) { this.show(); }
-		
+		if (!this.get('privacyAccept')) { this.show(); }
+
 		document.querySelector('#privacyPolicyAcceptBtn').addEventListener('click', () => {
-             this.hide();
-        });
-    },
+			this.hide();
+		});
+	},
 	
-    show: function(){
+	show: function(){
 		document.querySelector('#privacyPolicy').style.display = 'table';
-    },
+	},
 	
-    hide: function(){
+	hide: function(){
 		if (!this.get('privacyAccept')) {
 			const expires = new Date();
 			expires.setMilliseconds(expires.getMilliseconds() + (this.day * 864e+5));
-            this.set('privacyAccept', 1, expires.toUTCString());
-        }
+			this.set('privacyAccept', 1, expires.toUTCString());
+		}
 		
-        document.querySelector('#privacyPolicy').style.display = 'none';
-    },
+		document.querySelector('#privacyPolicy').style.display = 'none';
+	},
 	
 	set: function(name, value, expires, path, domain, secure) {
-		document.cookie = name + '=' + escape(value) +
+		document.cookie = name + '=' + 
+						escape(value) +
 						((expires) ? '; expires=' + expires : '') +
 						((path) ? '; path=' + path : '') +
 						((domain) ? '; domain=' + domain : '') +
