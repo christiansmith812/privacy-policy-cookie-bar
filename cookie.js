@@ -47,7 +47,7 @@ let cookie = {
 			
 			if (offset != -1) {
 				offset += search.length;
-				end = cookie.indexOf(';', offset)
+				end = cookie.indexOf(';', offset);
 				
 				if (end == -1) {
 					end = cookie.length;
